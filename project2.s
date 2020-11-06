@@ -21,4 +21,10 @@
 		move $t0, $zero #sum tracker
 		move $t1, $zero #len(userInput)
 		
-		la $t2, userInput #assigns input to address 
+		la $t2, userInput #assigns input to address
+
+
+	iterar:
+		lb $t3, ($t2) #each bit of input in $t2 is looked at in $t3
+		beqz $t3, finalizer #if end of string, get ready to end program
+		j charspecs #look at what type of character is being loaded 
