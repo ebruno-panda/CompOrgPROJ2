@@ -10,4 +10,10 @@
 		li $s3, 0x41 # $s3 = 'A' 
 		li $s4, 0x54 # $s4 = 'T' 
 		li $s5, 0x30 # $s5 = '0' 
-		li $s6, 0x39 # $s6 = '9' 
+		li $s6, 0x39 # $s6 = '9'
+
+		#gets user input
+		la $a0, userInput
+		la $a1, userInput
+		li $v0, 8
+		syscall 
