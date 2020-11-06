@@ -3,4 +3,4 @@
 	userInput:  .space 11 #how many characters allowed
 	out:		.asciiz "\n"
 
-.text
+.text 
