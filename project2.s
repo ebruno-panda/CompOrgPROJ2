@@ -39,3 +39,8 @@
        	        beq $t5, 1, hmm #if t5 is one, character is invalid
        	        slt $t5, $t3, $s4 #if ascii value < ":", it's a lowercase letter
 	        beq $t5, 1, charNconv #if t5 is one then go to charNconv
+		
+		slt $t5, $t3, $s3 #is ascii < "A"?
+	        beq $t5, 1, hmm #if t5 is one, character is invalid
+       	 	slt $t5, $t3, $s4 #if ascii value < "[", it's an uppercase letter
+       	        beq $t5, 1, charUconv #if t5 is one then go to charUconv
