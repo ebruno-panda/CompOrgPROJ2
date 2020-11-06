@@ -103,3 +103,7 @@
 		#wrong charcater type alert. Impostor(s) detected. Count all
 		add $t4, $zero, 1
 		add $t6, $zero, 1
+
+		#blanks in between impostors --> REPORT
+		beq $t7, 1, hmm
+		j EnterAlert
