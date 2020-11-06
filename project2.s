@@ -3,4 +3,7 @@
 	userInput:  .space 11 #how many characters allowed
 	out:		.asciiz "\n"
 
-.text 
+.text
+	main:
+		li $s1, 0x61 # $s1 = 'a' 
+		li $s2, 0x74 # $s2 = 't' 
