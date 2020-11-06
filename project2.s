@@ -5,12 +5,14 @@
 
 .text
 	main:
+		li $s0, 0x20 #s0 = 'SPACE'
 		li $s1, 0x61 # $s1 = 'a' 
 		li $s2, 0x7B # $s2 = '{'
 		li $s3, 0x41 # $s3 = 'A' 
 		li $s4, 0x5B # $s4 = '[' 
 		li $s5, 0x30 # $s5 = '0' 
-		li $s6, 0x3A # $s6 = ':'
+		li $s6, 0x3A # $s6 = ':' 
+		li $s7, 0xA #s7 = 'ENTER'
 
 		#gets user input
 		la $a0, userInput
