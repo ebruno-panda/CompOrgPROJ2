@@ -44,3 +44,9 @@
 	        beq $t5, 1, hmm #if t5 is one, character is invalid
        	 	slt $t5, $t3, $s4 #if ascii value < "[", it's an uppercase letter
        	        beq $t5, 1, charUconv #if t5 is one then go to charUconv
+
+		slt $t5, $t3, $s1 #is ascii < "a"?
+        	beq $t5, 1, hmm #if t5 is one, character is invalid
+        	slt $t5, $t3, $s2 #if ascii value < "{", it's a lowercase letter
+        	beq $t5, 1, charLconv #if t5 is one then go to charLconv
+        	j EnterAlert #reached end of input after considering all possibilities, so go to EnterAlert
