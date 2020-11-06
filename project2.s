@@ -114,3 +114,7 @@
 		li $v0, 1
 		move $a0, $t0
 		syscall
+
+#finish it
+li $v0, 10
+syscall	
