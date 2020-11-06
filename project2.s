@@ -50,3 +50,8 @@
         	slt $t5, $t3, $s2 #if ascii value < "{", it's a lowercase letter
         	beq $t5, 1, charLconv #if t5 is one then go to charLconv
         	j EnterAlert #reached end of input after considering all possibilities, so go to EnterAlert
+
+	charNconv:
+		addi $t3, $t3, -48 # convert to integer	
+		add $t0, $t0, $t3 #adds to total value tracker $t0
+		j impostor #checks base and moves on, else counts "impostors"
