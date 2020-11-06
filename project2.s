@@ -28,3 +28,8 @@
 		lb $t3, ($t2) #each bit of input in $t2 is looked at in $t3
 		beqz $t3, finalizer #if end of string, get ready to end program
 		j charspecs #look at what type of character is being loaded 
+
+	charspecs:
+		beq $t3, 0x9, tabberspace # If *tab* is detected, go to function tabberspace (and treat both the same)
+		beq $t3, 0x20, tabberspace # If *space* is detected, go to function tabberspace (and treat both the same)
+		beq $t3, 0xA, EnterAlert #If *Enter* is detected, go to function EnterAlert
