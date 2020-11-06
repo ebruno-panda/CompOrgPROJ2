@@ -84,3 +84,6 @@
 	tabberspace:
 		addi $t4, $zero, 0 #are there characters that are not blank?
 		beqz $t6, EnterAlert
+		#else, there are spaces/tabs after other characters
+		addi $t7, $zero, 1
+		j EnterAlert
