@@ -16,4 +16,9 @@
 		la $a0, userInput
 		la $a1, userInput
 		li $v0, 8
-		syscall 
+		syscall
+
+		move $t0, $zero #sum tracker
+		move $t1, $zero #len(userInput)
+		
+		la $t2, userInput #assigns input to address 
