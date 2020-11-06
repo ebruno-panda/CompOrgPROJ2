@@ -13,6 +13,8 @@
 		li $s5, 0x30 # $s5 = '0' 
 		li $s6, 0x3A # $s6 = ':' 
 		li $s7, 0xA #s7 = 'ENTER'
+		li $t4, 0 # $t4 = 0 for current character
+		li $t6, 0 # $t6 = 0 for non blank character count
 
 		#gets user input
 		la $a0, userInput
@@ -77,3 +79,8 @@
 		beq $t1, 5, hmm #if input counter exceeds 4, branches to function "hmm" to deal with this instance
 
 		j iterar #back to center function
+
+
+	tabberspace:
+		addi $t4, $zero, 0 #are there characters that are not blank?
+		beqz $t6, EnterAlert
