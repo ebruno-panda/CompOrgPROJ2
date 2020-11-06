@@ -6,11 +6,11 @@
 .text
 	main:
 		li $s1, 0x61 # $s1 = 'a' 
-		li $s2, 0x74 # $s2 = 't'
+		li $s2, 0x7B # $s2 = '{'
 		li $s3, 0x41 # $s3 = 'A' 
-		li $s4, 0x54 # $s4 = 'T' 
+		li $s4, 0x5B # $s4 = '[' 
 		li $s5, 0x30 # $s5 = '0' 
-		li $s6, 0x39 # $s6 = '9'
+		li $s6, 0x3A # $s6 = ':'
 
 		#gets user input
 		la $a0, userInput
