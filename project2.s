@@ -21,7 +21,9 @@
 		move $t1, $zero #len(userInput)
 
 		jal yoink
-		
+		jal iterar	
+		jal finalizer
+	
 		la $t2, userInput #assigns input to address
 
 	yoink:
@@ -36,9 +38,13 @@
 		jr $ra
 
 
+	regulator:
+		jr $ra #will go to "finalizer" back in main after all other [sub]programs have run
+
+
 	iterar:
 		lb $t3, ($t2) #each bit of input in $t2 is looked at in $t3
-		beqz $t3, finalizer #if end of string, get ready to end program
+		beqz $t3, regulator #if end of string, get ready to end program
 		j charspecs #look at what type of character is being loaded 
 
 	charspecs:
@@ -83,7 +89,7 @@
 		addi $t1, $t1, 1 #counts character in input individually
 		addi $t2, $t2, 1 #moves to next character
 		
-		beq $t3, $s7, iterar #value 'ENTER' will be sorted out in iterar and eventually to function finalizer
+		beq $t3, $s7, iterar #value 'ENTER' will be sorted out in iterar and ~eventually~ to function finalizer
 		beq $t1, 5, hmm #if input counter exceeds 4, branches to function "hmm" to deal with this instance
 
 		j iterar #back to center function
