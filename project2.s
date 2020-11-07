@@ -1,7 +1,7 @@
 #My ID is 02935002 | (02935002 % 11) + 26 = 30
 .data
-	userInput:  .space 11 #how many characters allowed
-	out:		.asciiz "\n"
+	whoops:  	.asciiz "Invalid input\n" #Error message
+	userInput:	.word 4 #take in a word
 
 .text
 	main:
