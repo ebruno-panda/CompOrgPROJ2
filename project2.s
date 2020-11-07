@@ -25,6 +25,14 @@
 		la $t2, userInput #assigns input to address
 
 	yoink:
+		#gets user input
+		la $a0, userInput
+		la $a1, userInput
+		li $v0, 8
+		syscall
+		
+		la $t2, userInput #assigns input to address
+		
 		jr $ra
 
 
