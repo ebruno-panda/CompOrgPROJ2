@@ -13,19 +13,19 @@
 		li $s5, 0x30 # $s5 = '0' 
 		li $s6, 0x3A # $s6 = ':' 
 		li $s7, 0xA #s7 = 'ENTER'
-		li $t4, 0 # $t4 = 0 for current character
-		li $t6, 0 # $t6 = 0 for non blank character count
-
-		#gets user input
-		la $a0, userInput
-		la $a1, userInput
-		li $v0, 8
-		syscall
+		
+		move $t4, $zero # $t4 = 0 for current character
+		move $t6, $zero # $t6 = 0 for non blank character count		
 
 		move $t0, $zero #sum tracker
 		move $t1, $zero #len(userInput)
+
+		jal yoink
 		
 		la $t2, userInput #assigns input to address
+
+	yoink:
+		jr $ra
 
 
 	iterar:
